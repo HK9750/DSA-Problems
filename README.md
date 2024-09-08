@@ -1,0 +1,1 @@
+A daily practice journal for data structures and algorithms. I'll push my solutions and explanations to this repository as I work through problems, making it easy to revisit and review my progress over time.
