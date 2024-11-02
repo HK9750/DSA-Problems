@@ -1,4 +1,4 @@
-// Leetcode 2541. Maximum Subsequence Score
+// Leetcode 2542. Maximum Subsequence Score
 
 class Solution
 {
