@@ -14,16 +14,6 @@ struct TreeNode
 class Solution
 {
 public:
-    vector<int> findLargestInEachRow(TreeNode *root)
-    {
-        vector<int> ans;
-        if (!root)
-            return ans;
-        bfs(root, ans);
-        return ans;
-    }
-
-private:
     void bfs(TreeNode *root, vector<int> &ans)
     {
         queue<TreeNode *> q;
@@ -33,18 +23,30 @@ private:
         {
             int size = q.size();
             int maxi = INT_MIN;
+
             while (size--)
             {
                 TreeNode *temp = q.front();
                 q.pop();
+
                 maxi = max(maxi, temp->val);
+
                 if (temp->left)
                     q.push(temp->left);
                 if (temp->right)
-                    q.push_back(temp->right);
+                    q.push(temp->right);
             }
             ans.push_back(maxi);
         }
+    }
+
+    vector<int> largestValues(TreeNode *root)
+    {
+        if (!root)
+            return {};
+        vector<int> ans;
+        bfs(root, ans);
+        return ans;
     }
 };
 
